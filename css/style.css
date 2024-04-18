@@ -19,6 +19,23 @@ body {
   background-color: var(--blue);
 }
 
+hr {
+  width: 90%;
+}
+
+a {
+  text-decoration: none;
+  columns: var(--blue);
+  &:visited {
+    color: var(--blue);
+  }
+  &:hover,
+  :focus,
+  :active {
+    font-weight: bold;
+  }
+}
+
 main {
   justify-self: center;
   max-width: 600px;
@@ -26,10 +43,6 @@ main {
   height: auto;
   margin-top: 10px;
   background-color: var(--light-blue);
-}
-
-hr {
-  width: 90%;
 }
 
 main > :nth-child(-n + 4) {
