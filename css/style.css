@@ -1,0 +1,73 @@
+/* Not the real colors name */
+:root {
+  --dark-blue: #003c43;
+  --blue: #135d66;
+  --teal: #77b0aa;
+  --light-blue: #e3fef7;
+  --white: #fffcf1;
+  /* Use the following page for changing svg color 
+     https://codepen.io/sosuke/pen/Pjoqqp */
+  --svg-white: invert(90%) sepia(2%) saturate(1567%) hue-rotate(331deg)
+    brightness(103%) contrast(119%);
+}
+
+body {
+  height: 98vh;
+  margin: 1vh 0;
+  box-sizing: border-box;
+  display: grid;
+  background-color: var(--blue);
+}
+
+main {
+  justify-self: center;
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  background-color: var(--light-blue);
+}
+
+hr {
+  width: 90%;
+}
+
+main > :nth-child(-n + 4) {
+  background-color: var(--dark-blue);
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px 10px 0 10px;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--white);
+}
+
+.profile_img {
+  width: 50%;
+  border-radius: 50%;
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  height: 30px;
+  margin-bottom: 8px;
+}
+
+.contact img {
+  height: 80%;
+  filter: var(--svg-white);
+}
+
+#github {
+  filter: invert(100%) sepia(12%) saturate(237%) hue-rotate(240deg)
+    brightness(113%) contrast(100%);
+}
+
+.education li {
+  margin-bottom: 6px;
+}
