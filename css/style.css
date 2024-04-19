@@ -36,13 +36,29 @@ a {
   }
 }
 
+h1 {
+  margin: 10px;
+}
+
+ul {
+  width: 100%;
+  text-align: left;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
 main {
+  display: grid;
   justify-self: center;
   max-width: 600px;
   width: 100%;
   height: auto;
   margin-top: 10px;
   background-color: var(--light-blue);
+  grid-template-columns: 40% 60%;
+  grid-template-rows: repeat(4, minmax(25%, 1fr));
 }
 
 main > :nth-child(-n + 4) {
@@ -50,11 +66,20 @@ main > :nth-child(-n + 4) {
   box-sizing: border-box;
   height: auto;
   padding: 10px 10px 0 10px;
-  width: 40%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: var(--white);
+  grid-column-start: 1;
+}
+
+main > :not(:nth-child(-n + 4)) {
+  grid-column-start: 2;
+}
+
+section h1 {
+  text-align: center;
 }
 
 .profile_img {
@@ -81,6 +106,18 @@ main > :nth-child(-n + 4) {
     brightness(113%) contrast(100%);
 }
 
-.education li {
-  margin-bottom: 6px;
+.projects {
+  grid-row-start: 1;
+}
+
+.tech-stack {
+  grid-row-start: 2;
+}
+
+.about-me {
+  grid-row-start: 3;
+}
+
+.hobbies {
+  grid-row-start: 4;
 }
