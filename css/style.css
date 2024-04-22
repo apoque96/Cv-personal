@@ -144,7 +144,6 @@ section h1 {
   main {
     margin: 0;
     width: 100vw;
-    color: black;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(8, auto);
   }
@@ -168,6 +167,7 @@ section h1 {
 
   .profile {
     background-color: var(--light-blue);
+    color: black;
     grid-row-start: 1;
   }
 
