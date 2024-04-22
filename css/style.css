@@ -58,10 +58,14 @@ main {
   margin-top: 10px;
   background-color: var(--light-blue);
   grid-template-columns: 40% 60%;
-  grid-template-rows: repeat(4, minmax(25%, 1fr));
+  grid-template-rows: repeat(6, auto);
 }
 
-main > :nth-child(-n + 4) {
+.profile,
+.contacts,
+.education,
+.languages,
+.blank {
   background-color: var(--dark-blue);
   box-sizing: border-box;
   height: auto;
@@ -74,12 +78,12 @@ main > :nth-child(-n + 4) {
   grid-column-start: 1;
 }
 
-main > :not(:nth-child(-n + 4)) {
-  grid-column-start: 2;
-}
-
 section h1 {
   text-align: center;
+}
+
+.blank {
+  height: 100%;
 }
 
 .profile_img {
@@ -106,18 +110,96 @@ section h1 {
     brightness(113%) contrast(100%);
 }
 
+.projects,
+.tech-stack,
+.about-me,
+.hobbies {
+  grid-column-start: 2;
+  margin: 0 15px;
+}
+
 .projects {
   grid-row-start: 1;
+  grid-row-end: 3;
 }
 
 .tech-stack {
-  grid-row-start: 2;
-}
-
-.about-me {
   grid-row-start: 3;
 }
 
-.hobbies {
+.about-me {
   grid-row-start: 4;
+}
+
+.hobbies {
+  grid-row-start: 5;
+}
+
+@media (max-width: 500px) {
+  html,
+  body {
+    margin: 0;
+  }
+
+  main {
+    margin: 0;
+    width: 100vw;
+    color: black;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8, auto);
+  }
+
+  section {
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .projects,
+  .tech-stack,
+  .about-me,
+  .hobbies {
+    margin: 0;
+    grid-column-start: 1;
+  }
+
+  ul {
+    width: 80%;
+  }
+
+  .profile {
+    background-color: var(--light-blue);
+    grid-row-start: 1;
+  }
+
+  .profile hr {
+    display: none;
+  }
+
+  .projects {
+    grid-row-start: 2;
+  }
+
+  .tech-stack {
+    grid-row-start: 3;
+  }
+
+  .about-me {
+    grid-row-start: 4;
+  }
+
+  .hobbies {
+    grid-row-start: 5;
+  }
+
+  .contacts {
+    grid-row-start: 6;
+  }
+
+  .education {
+    grid-row-start: 7;
+  }
+
+  .languages {
+    grid-row-start: 8;
+  }
 }
