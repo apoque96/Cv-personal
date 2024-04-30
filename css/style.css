@@ -17,6 +17,8 @@ body {
   box-sizing: border-box;
   display: grid;
   background-color: var(--blue);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1rem;
 }
 
 hr {
@@ -58,13 +60,18 @@ main {
   margin-top: 10px;
   background-color: var(--light-blue);
   grid-template-columns: 40% 60%;
-  grid-template-rows: repeat(6, auto);
+  grid-template-rows: repeat(7, auto);
+}
+
+#mail {
+  font-size: 0.8rem;
 }
 
 .profile,
 .contacts,
 .education,
 .languages,
+.hobbies,
 .blank {
   background-color: var(--dark-blue);
   box-sizing: border-box;
@@ -84,6 +91,8 @@ section h1 {
 
 .blank {
   height: 100%;
+  grid-row-start: 6;
+  grid-row-end: 7;
 }
 
 .profile_img {
@@ -110,35 +119,78 @@ section h1 {
     brightness(113%) contrast(100%);
 }
 
+.hobbies_container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.project img {
+  width: 100%;
+}
+
 .projects,
 .tech-stack,
-.about-me,
-.hobbies {
+.about-me {
   grid-column-start: 2;
   margin: 0 15px;
 }
 
 .projects {
   grid-row-start: 1;
-  grid-row-end: 3;
+  grid-row-end: 5;
+}
+
+.project > img {
+  display: block;
+  margin: 0 auto 10px;
+  width: 80%;
+}
+
+.repository {
+  margin: 10px auto 0;
+  padding: 5px;
+  border-radius: 15px;
+  background-color: var(--teal);
 }
 
 .tech-stack {
-  grid-row-start: 3;
+  grid-row-start: 5;
+}
+
+.skill-container {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.skill,
+.hobby {
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 8px;
+  background-color: var(--teal);
+  border-radius: 15px;
+  height: 22px;
+  font-size: 16px;
+}
+
+.skill img,
+.hobby img {
+  height: 100%;
 }
 
 .about-me {
-  grid-row-start: 4;
-}
-
-.hobbies {
-  grid-row-start: 5;
+  grid-row-start: 6;
 }
 
 @media (max-width: 500px) {
   html,
   body {
     margin: 0;
+    height: auto;
   }
 
   main {
@@ -155,8 +207,7 @@ section h1 {
 
   .projects,
   .tech-stack,
-  .about-me,
-  .hobbies {
+  .about-me {
     margin: 0;
     grid-column-start: 1;
   }
@@ -169,6 +220,7 @@ section h1 {
     background-color: var(--light-blue);
     color: black;
     grid-row-start: 1;
+    grid-row-end: 1;
   }
 
   .profile hr {
@@ -177,29 +229,44 @@ section h1 {
 
   .projects {
     grid-row-start: 2;
+    grid-row-end: 2;
   }
 
   .tech-stack {
     grid-row-start: 3;
+    grid-row-end: 3;
   }
 
   .about-me {
     grid-row-start: 4;
-  }
-
-  .hobbies {
-    grid-row-start: 5;
-  }
-
-  .contacts {
-    grid-row-start: 6;
+    grid-row-end: 4;
   }
 
   .education {
-    grid-row-start: 7;
+    grid-row-start: 5;
+    grid-row-end: 5;
   }
 
   .languages {
+    grid-row-start: 6;
+    grid-row-end: 6;
+  }
+
+  .hobbies {
+    grid-row-start: 7;
+    grid-row-end: 7;
+  }
+
+  .contacts {
     grid-row-start: 8;
+    grid-row-end: 8;
+  }
+
+  .contacts > hr {
+    display: none;
+  }
+
+  .blank {
+    display: none;
   }
 }
